@@ -1,0 +1,12 @@
+.login:hover{
+    cursor: pointer;
+}
+.login {
+    background-color: rgb(148, 148, 148);
+    border: 1px solid rgb(148, 148, 148);
+    border-radius: 32px;
+}
+.login > p {
+    padding: 0.5rem;
+    margin-bottom: 0;
+}
