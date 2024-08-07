@@ -1,7 +1,6 @@
 import axios from 'axios';
 
 export async function sejong_authenticate(id, password) {
-  
     try {
         const response = await axios.post('sejongauth/auth?method=ClassicSession', {
             id: id,

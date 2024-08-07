@@ -1,12 +1,11 @@
-// src/components/SignUp.js
 import React, { useState } from 'react';
 import { Button, Col, Container, Form, Row, Modal } from 'react-bootstrap';
 import { db } from '../firebase';
-import { ref, set } from 'firebase/database';
+import { child, get, ref, set } from 'firebase/database';
 import bcrypt from 'bcryptjs';
 import { useNavigate } from 'react-router-dom';
 import { sejong_authenticate } from '../sejong_auth';
-
+import { useAuth } from '../context/AuthContext';
 
 const SignUp = () => {
   const [sejongId, setSejongId] = useState('');
@@ -17,8 +16,9 @@ const SignUp = () => {
   const [success, setSuccess] = useState(null);
   const [showModal, setShowModal] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const { login } = useAuth();
   const navigate = useNavigate();
-
+  
   const handleClose = () => {
     setShowModal(false);
     if (success) {
@@ -38,7 +38,7 @@ const SignUp = () => {
       }
     } catch (error) {
       console.error('Error authenticating:', error);
-      setError('Sejong authentication failed. Please try again.');
+      setError('세종 인증에 실패하였습니다.');
       setSuccess(null);
       setShowModal(true);
     }
@@ -54,18 +54,29 @@ const SignUp = () => {
     }
 
     try {
-      const hashedPassword = await bcrypt.hash(webPassword, 10);
       const userRef = ref(db, 'users/' + webId);
+      const snapshot = await get(child(ref(db), `users/${webId}`));
+
+      if (snapshot.exists()) {
+        setError('이미 가입된 계정입니다.');
+        setSuccess(null);
+        setShowModal(true);
+        return;
+      }
+
+
+      const hashedPassword = await bcrypt.hash(webPassword, 10);
       await set(userRef, {
         id: webId,
         password: hashedPassword,
         createdAt: new Date().toISOString()
       });
 
-      setSuccess('User created successfully!');
+      setSuccess('회원가입 되었습니다.');
       setError(null);
       setShowModal(true);
       console.log('User created and saved to Realtime Database:', webId);
+      await login(webId, webPassword);
     } catch (error) {
       console.error('Error signing up:', error);
       setError('Error signing up. Please try again.');
@@ -135,12 +146,12 @@ const SignUp = () => {
 
       <Modal show={showModal} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>{success ? 'Success' : 'Error'}</Modal.Title>
+          <Modal.Title>{success ? '회원가입 되었습니다.' : '오류 발생.'}</Modal.Title>
         </Modal.Header>
         <Modal.Body>{success || error}</Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
-            Close
+            닫기
           </Button>
         </Modal.Footer>
       </Modal>

@@ -1,18 +1,18 @@
-import { initializeApp } from "firebase/app";
-import { getDatabase } from "firebase/database";
+const { initializeApp } = require('firebase/app');
+const { getDatabase } = require('firebase/database');
 
 const firebaseConfig = {
-    apiKey: "AIzaSyD7ckczZgvgl69npBQMrRwmVD8_TVSZKYE",
-    authDomain: "noticeboard-account.firebaseapp.com",
-    databaseURL: "https://noticeboard-account-default-rtdb.asia-southeast1.firebasedatabase.app/",
-    projectId: "noticeboard-account",
-    storageBucket: "noticeboard-account.appspot.com",
-    messagingSenderId: "529438110694",
-    appId: "1:529438110694:web:1051c56f130b660c9a9c27",
-    measurementId: "G-PPSF1L94T7"
-  };
-
+  apiKey: "AIzaSyCHTxOh0HucaSiNjYO-Z0LAld7uAete1oM",
+  authDomain: "noticeboardrtdb.firebaseapp.com",
+  databaseURL: "https://noticeboardrtdb-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "noticeboardrtdb",
+  storageBucket: "noticeboardrtdb.appspot.com",
+  messagingSenderId: "120970806131",
+  appId: "1:120970806131:web:2fbd6b953613747c9bbb06",
+  measurementId: "G-JEWRC06RC3"
+};
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
 
-export { db };
+module.exports = { db };
+// export { db };

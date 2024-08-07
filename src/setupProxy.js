@@ -18,25 +18,6 @@ module.exports = function(app) {
     })
   );
   app.use(
-    '/dodreamapi',
-    createProxyMiddleware({
-      target: 'https://do.sejong.ac.kr',
-      changeOrigin: true,
-      logLevel: 'debug',
-      pathRewrite: {
-        '^/dodreamapi': '',
-      }
-    })
-  );
-  app.use(
-    '/classic',
-    createProxyMiddleware({
-      target: 'http://classic.sejong.ac.kr',
-      changeOrigin: true,
-      logLevel: 'debug',
-    })
-  );
-  app.use(
     '/myboard',
     createProxyMiddleware({
       target: 'http://imc.sejong.ac.kr/myboard',
@@ -48,6 +29,14 @@ module.exports = function(app) {
     '/sejongauth',
     createProxyMiddleware({
       target: 'https://auth.imsejong.com',
+      changeOrigin: true,
+      logLevel: 'debug',
+    })
+  );
+  app.use(
+    '/youcangraduate',
+    createProxyMiddleware({
+      target: 'http://localhost:5001',
       changeOrigin: true,
       logLevel: 'debug',
     })

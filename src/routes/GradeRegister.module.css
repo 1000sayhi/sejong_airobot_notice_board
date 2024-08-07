@@ -1,0 +1,78 @@
+.container {
+    padding: 1rem;
+    width: 80%;
+  }
+  
+.form {
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+.form h1, .form h2 {
+    margin-bottom: 1rem;
+  }
+  
+  .form div {
+    margin-bottom: 1rem;
+  }
+  
+  .form label {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  
+  .form input[type="file"], .form input[type="checkbox"], .form input[type="password"] {
+    margin-bottom: 0.5rem;
+  }
+  
+  button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    background-color: grey;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: black;
+  }
+  
+  button:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+  }
+  
+  .error {
+    color: red;
+    font-weight: bold;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+  }
+  
+  table, th, td {
+    border: 1px solid #ddd;
+  }
+  
+  th, td {
+    padding: 0.75rem;
+    text-align: left;
+  }
+  
+  .pass {
+    color: green;
+    font-weight: bold;
+  }
+  
+  .fail {
+    color: red;
+    font-weight: bold;
+  }
+  

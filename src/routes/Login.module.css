@@ -1,0 +1,51 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100vh;
+    background-color: #f8d7da;
+  }
+.container {
+    height: 100vh;
+    
+  }
+  
+  .loginBox {
+    max-width: 400px;
+    width: 100%;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+  }
+  
+  .title {
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  
+  .formGroup {
+    margin-bottom: 1.5rem;
+  }
+  
+  .button {
+    width: 100%;
+  }
+  
+  .signupLink {
+    margin-top: 1rem;
+    text-align: center;
+  }
+  
+  .signupLink p {
+
+    display: inline;
+    cursor: pointer;
+    color: rgb(221, 46, 151);
+    margin-left: 8px;
+  }
+  
+  .signupLink p:hover {
+    text-decoration: underline;
+  }
+  

@@ -1,0 +1,79 @@
+
+.container {
+  margin-top: 50px;
+  max-width: 600px;
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.formGroup {
+  margin-bottom: 15px;
+}
+
+.formGroup label {
+  font-weight: bold;
+}
+
+.formControl {
+  border-radius: 4px;
+  padding: 10px;
+  border: 1px solid #ced4da;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.formControl:focus {
+  border-color: #495057;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
+}
+
+.buttonPrimary {
+  width: 100%;
+  padding: 10px;
+  background-color: palevioletred;
+  border-color: palevioletred;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+
+
+.buttonSecondary {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #6c757d;
+  border-color: #6c757d;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+.buttonSecondary:hover {
+  background-color: #5a6268;
+  border-color: #545b62;
+}
+
+.alert {
+  margin-top: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.alert-danger {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.alert-success {
+  background-color: #d4edda;
+  color: #155724;
+}

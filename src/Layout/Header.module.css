@@ -1,0 +1,36 @@
+.user-icon-container, .login:hover{
+    cursor: pointer;
+}
+.login, .logout {
+    background-color: rgb(148, 148, 148);
+    border: 1px solid rgb(148, 148, 148);
+    border-radius: 32px;
+}
+.login> p, .logout > p {
+    padding: 0.5rem;
+    margin-bottom: 0;
+}
+.user-icon-container{
+    border-radius: 16px;
+    margin-right: 8px;
+    background-color: rgb(148, 148, 148);
+    
+}
+.menuBar {
+    display: flex;
+    background-color: #ffe4e1;
+    width: 80%;
+    padding: 10px 0;
+  }
+  
+.menuItem {
+  background-color: yellow;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 16px;
+}
+.menuItem > a{
+    text-decoration: none;
+    color: black;
+}

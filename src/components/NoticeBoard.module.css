@@ -1,0 +1,45 @@
+.linkCustom {
+    text-decoration: none;
+}
+
+.linkCustom:hover {
+    font-weight: 600;
+}
+
+.noticeContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+
+.noticeSectionContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 20px;
+}
+
+.noticeSection {
+    text-align: center;
+    flex: 1;
+}
+
+.linkSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.linkSection a {
+    font-size: 24px;
+}
+.linkCustom:first-child{
+    width: 240px;
+}
+.linkCustom:nth-child(2){
+    width: 220px;
+    text-align: center;
+}

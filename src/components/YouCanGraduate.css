@@ -1,0 +1,17 @@
+.pass {
+    color: green;
+}
+.fail {
+    color: red;
+}
+.canvasContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+  }
+.canvasContainer > div{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}

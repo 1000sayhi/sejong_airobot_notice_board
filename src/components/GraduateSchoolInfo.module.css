@@ -1,0 +1,50 @@
+.profName {
+    font-size: 20px;
+}
+
+.linkCustom {
+    text-decoration: none;
+}
+
+.linkCustom:hover {
+    font-weight: 600;
+}
+
+
+.gridContainer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(auto-fill, minmax(100px, auto));
+    gap: 10px;
+    text-align: center;
+}
+.gridContainer > div{
+    max-height: 12rem;
+}
+
+@media (max-width: 1200px) {
+    .profName {
+        font-size: 18px;
+    }
+    
+    .gridContainer {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 992px) {
+    .profName {
+        font-size: 16px;
+    }
+    
+    .gridContainer {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .profName {
+        font-size: 14px;
+    }
+
+}

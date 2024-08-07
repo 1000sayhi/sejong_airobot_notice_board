@@ -50,31 +50,7 @@ export const fetchSchoolNoticeData = async () => {
   }
 }
 
-export const fetchDoDreamNoticeData = async () => {
-  const cheerio = require("cheerio");
-  try {
-    const response = await axios.get('dodreamapi');
-    
-    const $ = cheerio.load(response.data);
-    const $trs = $("body > div:nth-child(2) > main > div.container > div:nth-child(4) > div > div.box.slick-initialized.slick-slider.slick-dotted > div > div");
-    let dataArr = [];
 
-    $trs.each((idx, ele) => {
-      let title = $(ele).find("div.OPEN > a > .content > .title_wrap > b").text()
-
-      if (title === "") {
-        return;
-      }
-      dataArr.push({
-        title: title,
-      });
-    });
-    return dataArr;
-  } catch (error) {
-    console.log(error);
-    return [];
-  }
-}
 
 export const fetchLabInfo = async () => {
   const cheerio = require("cheerio");
